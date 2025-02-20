@@ -1,4 +1,4 @@
-# Reining Task Representation Shift
+# Reining In Task Representation Shift
 
 ## 1. Prepare for the dataset
 As collecting the dataset need a huge amount of time, we provide two datasets to valid as an example. You can download the datasets like [env_name].tar.bz2 [At Anonymous Site Here](https://drive.google.com/file/d/1CW37J4msh3nzSnEwIWnSQ472L3_IfgIE/view?usp=sharing), and then extract them under the directory called **batch_data**.
@@ -65,11 +65,11 @@ This section is primarily intended to briefly introduce the purpose of the train
 
 #### 1. `train_[classifier/contrastive/reconstruction]_advance.py`
 
-This section contains the training code for `k = a × bs` and `acc = 1`. You can set the value of parameter `a` through setting `--update_advance_frequency`.
+This section contains the training code for `N_k=n` and `N_{acc} = 1`. You can set the value of parameter `n` through setting `--update_advance_frequency`.
 
 #### 2. `train_[classifier/contrastive/reconstruction]_delay.py`
 
-This section contains the training code for `k = 1 × bs` and `acc = a`. You can set the value of parameter `a` through setting `--update_delay_frequency`.
+This section contains the training code for `N_k=1` and `N_{acc} = n`. You can set the value of parameter `n` through setting `--update_delay_frequency`.
 
 #### 3. `train_[classifier/contrastive/reconstruction]_pretrain.py`
 
@@ -99,3 +99,17 @@ This section contains the training code for the original method.
 
 #### 5. `offline_rl_config/args_ant_dir.py`
 You can find the most detailed parameter information in this file.
+
+
+## Citation
+If you find this implementation useful, please consider citing our paper through:
+
+    @inproceedings{
+    zhang2025scrutinize,
+    title={Scrutinize What We Ignore: Reining In Task Representation Shift Of Context-Based Offline Meta Reinforcement Learning},
+    author={Hai Zhang and Boyuan Zheng and Tianying Ji and JinHang Liu and Anqi Guo and Junqiao Zhao and Lanqing Li},
+    booktitle={The Thirteenth International Conference on Learning Representations},
+    year={2025},
+    url={https://openreview.net/forum?id=Cr1XlGBGVm}
+    }
+
